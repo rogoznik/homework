@@ -1,0 +1,46 @@
+$bgColorDark: #445161;
+$bgColorGrey: #f2f2f2;
+$bgColorDarkGray: #e8e8e8;
+$bgColorWhite: #ffffff;
+
+$colorWhite: #ffffff;
+$colorDarkBlue: #445161;
+$colorDark: #333333;
+$colorDarkGrey: #989898;
+
+$h2FontSize: 30px;
+
+
+@mixin headMainSection($color, $textAlign) {
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 36px;
+  color:  $color;
+  margin-bottom: 30px;
+  text-align: $textAlign;
+}
+
+@mixin clearfix {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+
+@mixin respond-to($device) {
+  @if $device == smallphones {
+    @media only screen and (max-width: 486px) { @content; }
+  }
+  @if $device == phones {
+    @media only screen and (min-width: 486px) and (max-width: 768px) { @content; }
+  }
+  @if $device == tablets {
+    @media only screen and (min-width: 768px) and (max-width: 1024px) { @content; }
+  }
+  @if $device == desktops {
+    @media only screen and (min-width: 1024px) and (max-width: 1200px){ @content; }
+  }
+  @if $device == ldesktops {
+    @media only screen and (min-width: 1200px){ @content; }
+  }
+}
