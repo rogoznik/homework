@@ -144,6 +144,11 @@ body {
       width: 100%;
       height: auto; } }
 
+.about__link {
+  color: #445161;
+  display: block;
+  margin-top: 10px; }
+
 .pluses {
   background: #f2f2f2;
   padding-bottom: 15px; }
