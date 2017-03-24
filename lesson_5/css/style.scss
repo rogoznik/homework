@@ -30,7 +30,7 @@ body {
 }
 .header-slider {
   background: url("../img/slider.png") no-repeat;
-  background-color: rgba(17, 17, 17, 0.7);
+  background-color: $bgBlendMod;
   background-size: 100%;
   background-position: top left;
   background-blend-mode: multiply;
@@ -176,21 +176,8 @@ body {
 }
 .header__button-get-started {
   display: block;
-  color: $white;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 53px;
-  text-align: center;
-  border-radius: 3px;
-  background-color: $brown;
-  width: 170px;
-  height: 53px;
-  box-shadow: 0 3px 0 darken($brown, 20%);
   margin: 52px auto 0;
-  &:hover {
-    background: darken($brown, 20%);
-  }
+  @include button;
 }
 
 
@@ -199,7 +186,7 @@ body {
 .services {
   height: 373px;
 }
-.services__content {
+.services-content {
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
@@ -260,9 +247,219 @@ body {
 }
 .item__line {
   display: block;
-  margin: 0 auto;
   width: 70px;
   height: 3px;
   background: $lightGray;
-  margin-top: 30px;
+  margin: 30px auto 0;
+}
+
+
+
+
+.realization {
+  height: 700px;
+  background: url("../img/Background-realization.png") no-repeat;
+}
+.realization__head {
+  color:  $dark;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 40px;
+}
+.realization__desc {
+  width: 757px;
+  font-family: "Montserrat", sans-serif;
+  color: $darkGray;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  padding-top: 24px;
+  margin: 0 auto;
+}
+
+
+
+.text-box {
+  background: linear-gradient(90deg, #211b19 0%, #4e3427 100%);
+  height: 150px;
+}
+.text-box-content {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+.text-box__head {
+  color:  $white;
+  font-size: 30px;
+  font-weight: 400;
+}
+.text-box__head-colored {
+  color: $lightBrown;
+}
+.text-box__desc {
+  font-family: "Montserrat", sans-serif;
+  color: $darkBrown;
+  font-size: 18px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+.text-box__button {
+  @include button;
+}
+
+
+
+
+.projects-content {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.projects__head {
+  color: $dark;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+.projects__desc {
+  width: 757px;
+  font-family: "Montserrat", sans-serif;
+  color: $darkGray;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  text-align: center;
+  margin: 25px auto 40px;
+}
+.projects__switcher {
+  margin: 0 auto 40px;
+  width: 660px;
+  display: flex;
+  justify-content: space-between;
+}
+.switcher__item {
+  display: inline-block;
+}
+.switcher__link {
+  display: inline-block;
+  padding: 11px 27px;
+  font-family: "Montserrat", sans-serif;
+  color: $darkGray;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 21px;
+  border-radius: 3px;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  &:hover {
+    background-color: $brown;
+    color: $white;
+  }
+}
+.projects__wrapper-item {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.projects-item:nth-child(-n+3) {
+  margin-bottom: 30px;
+}
+.projects-item {
+  &:hover .projects-item__img1 {
+    background-blend-mode: multiply;
+  }
+  &:hover .projects-item__img2 {
+    background-blend-mode: multiply;
+  }
+  &:hover .projects-item__img3 {
+    background-blend-mode: multiply;
+  }
+  &:hover .projects-item__img4 {
+    background-blend-mode: multiply;
+  }
+  &:hover .projects-item__img5 {
+    background-blend-mode: multiply;
+  }
+  &:hover .projects-item__img6 {
+    background-blend-mode: multiply;
+  }
+  &:hover .projects-item__desc {
+    background: #362f2d;
+  }
+  &:hover .projects-item__head {
+    color: $white;
+  }
+  &:hover .projects-item__text {
+    color: $lightBrown;
+  }
+  &:hover .projects-item__hover-panel {
+    display: block;
+  }
+}
+.projects-item__img {
+  width: 370px;
+  height: 237px;
+}
+.projects-item__hover-panel {
+  display: none;
+  text-align: center;
+  position: relative;
+  top: (237px / 2) - (25px / 2);
+}
+.hover-panel__link {
+  display: inline-block;
+  background: url("../img/project-link.svg") no-repeat;
+  width: 26px;
+  height: 25px;
+  margin-right: 14px;
+}
+.hover-panel__magnifier {
+  display: inline-block;
+  cursor: pointer;
+  background: url("../img/project-lupa.svg");
+  width: 26px;
+  height: 25px;
+  margin-left: 14px;
+}
+.projects-item__img1 {
+  background: url("../img/project1.png") no-repeat $bgBlendMod;
+}
+.projects-item__img2 {
+  background: url("../img/project2.png") no-repeat $bgBlendMod;
+  background-size: cover;
+}
+.projects-item__img3 {
+  background: url("../img/project3.png") no-repeat $bgBlendMod;
+}
+.projects-item__img4 {
+  background: url("../img/project4.png") no-repeat $bgBlendMod;
+}
+.projects-item__img5 {
+  background: url("../img/project5.png") no-repeat $bgBlendMod;
+}
+.projects-item__img6 {
+  background: url("../img/project6.png") no-repeat $bgBlendMod;
+}
+.projects-item__desc {
+  padding: 30px;
+  box-sizing: border-box;
+}
+.projects-item__head {
+  color: $lightBrown;
+  font-size: 20px;
+  font-weight: 500;
+}
+.projects-item__text {
+  font-family: "Montserrat", sans-serif;
+  color: #d1d1d1;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+}
+.projects__button {
+  display: block;
+  margin: 0 auto;
+  @include button;
 }
